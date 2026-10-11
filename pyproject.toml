@@ -1,0 +1,20 @@
+# Tool configuration only (ruff, pytest, coverage). Dependencies live in requirements*.txt.
+[tool.ruff]
+target-version = "py312"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+exclude_also = ['if __name__ == "__main__":']
